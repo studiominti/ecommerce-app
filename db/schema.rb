@@ -49,11 +49,6 @@ ActiveRecord::Schema.define(version: 2020_02_20_185129) do
     t.index ["product_id"], name: "index_colors_on_product_id"
   end
 
-  create_table "colors_products", id: false, force: :cascade do |t|
-    t.integer "color_id", null: false
-    t.integer "product_id", null: false
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
     t.integer "price"
