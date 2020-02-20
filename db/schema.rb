@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_183015) do
+ActiveRecord::Schema.define(version: 2020_02_20_185129) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 2020_02_20_183015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categories_on_category_id"
+  end
+
+  create_table "colors", force: :cascade do |t|
+    t.string "color"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_colors_on_product_id"
+  end
+
+  create_table "colors_products", id: false, force: :cascade do |t|
+    t.integer "color_id", null: false
+    t.integer "product_id", null: false
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -83,6 +96,22 @@ ActiveRecord::Schema.define(version: 2020_02_20_183015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.string "size"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_sizes_on_product_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.boolean "stock"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_stocks_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
