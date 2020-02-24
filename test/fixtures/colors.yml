@@ -2,8 +2,8 @@
 
 one:
   color: MyString
-  product: one
+  stock: one
 
 two:
   color: MyString
-  product: two
+  stock: two

@@ -2,8 +2,8 @@
 
 one:
   size: MyString
-  product: one
+  stock: one
 
 two:
   size: MyString
-  product: two
+  stock: two

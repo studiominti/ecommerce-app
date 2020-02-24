@@ -5,12 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 Category.destroy_all
+
 tatara_father = Category.create(name: 'clothing') # or tatara_mother
+
 tatara_father.children << Category.new(name: 'dresses')
 tatara_father.children << Category.new(name: 'pants')
 tatara_father.children << Category.new(name: 'shoes')
+
 Category.find_by(name: 'dresses').children << Category.new(name: 'summer dresses')
 Category.find_by(name: 'dresses').children << Category.new(name: 'winter dresses')
 Category.find_by(name: 'dresses').children << Category.new(name: 'spring dresses')

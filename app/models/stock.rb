@@ -3,5 +3,5 @@ class Stock < ApplicationRecord
   belongs_to :color
   belongs_to :size
 
-  validates :product_id, uniqueness: { scope: [:color_id, :size_id]}
+  validates :product_id, uniqueness: {scope: [:color_id, :size_id]}
 end
